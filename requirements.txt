@@ -1,0 +1,13 @@
+# Tested direct dependencies on CPython 3.13.6. Sorting uses stdlib only.
+psutil==7.2.2
+matplotlib==3.11.2
+pandas==3.0.5
+nbformat==5.11.1
+nbconvert==7.17.1
+nbclient==0.11.0
+ipykernel==7.3.0
+jupyterlab==4.6.3
+# Used to read/render source PDFs and presentation exports, not to sort.
+pypdf==6.18.1
+pymupdf==1.28.2
+reportlab==5.0.1

@@ -1,0 +1,17 @@
+test_edge_cases (test_algorithms.SortingTests.test_edge_cases) ... ok
+test_exhaustive_ternary_arrays (test_algorithms.SortingTests.test_exhaustive_ternary_arrays) ... ok
+test_instrumentation_logic_matches (test_algorithms.SortingTests.test_instrumentation_logic_matches) ... ok
+test_invalid_thresholds (test_algorithms.SortingTests.test_invalid_thresholds) ... ok
+test_known_counts (test_algorithms.SortingTests.test_known_counts) ... ok
+test_lecture_merge_comparison_equivalence (test_algorithms.SortingTests.test_lecture_merge_comparison_equivalence) ... ok
+test_random_small (test_algorithms.SortingTests.test_random_small) ... ok
+test_stability (test_algorithms.SortingTests.test_stability) ... ok
+test_subarray_and_buffer (test_algorithms.SortingTests.test_subarray_and_buffer) ... ok
+test_csv_missing_metrics_and_duplicate_rejection (test_experiment.ProtocolTests.test_csv_missing_metrics_and_duplicate_rejection) ... ok
+test_inclusive_rng_and_integrity (test_experiment.ProtocolTests.test_inclusive_rng_and_integrity) ... ok
+test_models (test_experiment.ProtocolTests.test_models) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.131s
+
+OK

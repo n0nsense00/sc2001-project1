@@ -1,0 +1,519 @@
+{
+  "slides": [
+    {
+      "title": "Integration of Merge Sort\n& Insertion Sort",
+      "layout": "cover",
+      "seconds": 35,
+      "subtitle": "SC2001 Project 1",
+      "body": "Handwritten Python algorithms\nMeasured inputs from 1,000 to 10,000,000 integers",
+      "notes": "0:00-0:35. State the question: can insertion sort at small recursive leaves reduce Python CPU time? We implemented both algorithms, counted key comparisons and measured CPU separately. Explain that S is a leaf-size threshold, and that we chose it from experiments. Requirements: Project1.pdf p.1. Presentation format: info.pdf p.1-2. No student names or contributions are assumed."
+    },
+    {
+      "title": "The hybrid algorithm",
+      "layout": "example",
+      "seconds": 75,
+      "left_title": "Stop splitting when the range has at most S items",
+      "pseudocode": "hybrid(A, lo, hi, S)\n  if hi-lo <= S:\n    insertion(A, lo, hi)\n    return\n  mid = lo + (hi-lo)//2\n  hybrid(A, lo, mid, S)\n  hybrid(A, mid, hi, S)\n  merge(A, lo, mid, hi)",
+      "right_title": "Worked example: S=3",
+      "right": "Input: [5, 2, 4, 1, 3, 6]\n\nLeaves: [5, 2, 4] and [1, 3, 6]\nInsertion: [2, 4, 5] and [1, 3, 6]\n\nMerge: [1, 2, 3, 4, 5, 6]\n\n3 + 2 + 5 = 10 key comparisons",
+      "notes": "0:35-1:50, including about 25 seconds of live demo. Explain [lo,hi): lo is included, hi excluded. Trace the left leaf: 5>2 true, 5>4 true, 2>4 false. Right leaf has two false comparisons. Merge needs five ordering checks then copies 6. Run python demo.py from the preopened terminal. Both algorithms happen to make 10 comparisons on this input. This example explains mechanics, not typical speed. If the terminal fails, use these precomputed values. Source: algorithms.py and demo.py. Lecture 01_Sorting.pdf p.12/14."
+    },
+    {
+      "title": "Correctness, counting and fair timing",
+      "layout": "columns",
+      "seconds": 65,
+      "left_title": "Correctness and counting",
+      "left": "Insertion maintains a sorted prefix.\nMerge emits the smallest remaining head.\nInduction gives a sorted, stable result.\n\nCount each evaluated data comparison:\nmerge <= and insertion >.\nInclude terminating false comparisons.",
+      "right_title": "Experiment protocol",
+      "right": "Uniform integers in [1, 1,000,000].\nThree seeds per case, paired inputs.\nSeparate counted and uncounted runs.\nCPU clock: time.process_time().\n\nExclude RNG, copies, buffer allocation,\nvalidation and I/O. Run sequentially.\nVerify order, length and exact histogram.",
+      "notes": "1:50-2:55. Explain stability: left on ties, shift only greater values. Index checks, copying and validation do not count. Tests include exhaustive ternary arrays through length 6 and S=1 equality with original counts. Large runs check exact frequency histograms and sorted order, not just checksums. Warmup is one deterministic small sort per case. Seeded shuffled order and 3 input seeds reduce systematic order bias. Timed tiny inputs use independent pre-timer batches. Metadata captures CPython/Windows/hardware. sources: tests/, experiment.py, results/full/metadata.json. Timer semantics: https://docs.python.org/3/library/time.html#time.process_time. RNG: https://docs.python.org/3/library/random.html#random.randint."
+    },
+    {
+      "title": "Fixed S retains n log n growth",
+      "layout": "chart_side",
+      "seconds": 75,
+      "charts": [
+        {
+          "title": "(c)(i): fixed S=16",
+          "xlabel": "log10(n integers)",
+          "ylabel": "log10(key comparisons)",
+          "series": [
+            {
+              "name": "Measured median",
+              "x": [
+                3.0,
+                4.0,
+                5.0,
+                5.477121254719663,
+                6.0,
+                6.477121254719663,
+                7.0
+              ],
+              "y": [
+                4.016490131620828,
+                5.104394916377749,
+                6.214702414500049,
+                6.72088525032535,
+                7.305811756983488,
+                7.8031355299266485,
+                8.354912877552538
+              ],
+              "color": 0
+            },
+            {
+              "name": "Distinct model",
+              "x": [
+                3.0,
+                4.0,
+                5.0,
+                5.477121254719663,
+                6.0,
+                6.477121254719663,
+                7.0
+              ],
+              "y": [
+                4.013857095564047,
+                5.104025073555342,
+                6.214685713082852,
+                6.720844241490398,
+                7.3058583510197455,
+                7.803124421809371,
+                8.354910002507678
+              ],
+              "color": 1
+            }
+          ],
+          "xmin": 3,
+          "xmax": 7
+        }
+      ],
+      "side": "Original\nT(n) = 2T(n/2) + Theta(n)\nTime: Theta(n log n)\nBuffer: Theta(n)\n\nHybrid\nAbout log2(n/S) merge levels\nRandom leaf work: Theta(nS)\nFixed S: Theta(n log n)",
+      "footnote": "Both axes show log10 values. Analytical counts use actual rounded splits with no fitted scale factor.",
+      "notes": "2:55-4:10. Explain the original recurrence for even n; the exact code uses floor/ceiling lengths. Merge work is linear at each of logarithmically many levels. Hybrid replaces lower merge levels with insertion leaves. With constant S it retains n log n growth. The plotted coordinates are log10(n) and log10(count), so 3 to 7 covers 1,000 through 10,000,000. The full notebook uses conventional log axes plus min-max ranges and the worst bound. The analytical random-distinct expectation is an approximation to repeated integers, not a fitted line. Similar shape does not prove complexity; the recurrence does. Source: theory.py, docs/theory.md, raw stage=scale."
+    },
+    {
+      "title": "Increasing S changes the leaf work",
+      "layout": "chart_side",
+      "seconds": 60,
+      "charts": [
+        {
+          "title": "(c)(ii): n=100,000",
+          "xlabel": "Threshold S",
+          "ylabel": "Key comparisons (millions)",
+          "series": [
+            {
+              "name": "Measured median",
+              "x": [
+                1.0,
+                4.0,
+                8.0,
+                12.0,
+                16.0,
+                24.0,
+                32.0,
+                48.0,
+                64.0
+              ],
+              "y": [
+                1.536373,
+                1.536809,
+                1.55808,
+                1.620212,
+                1.639933,
+                1.765527,
+                1.862878,
+                1.949853,
+                2.384656
+              ],
+              "color": 0
+            },
+            {
+              "name": "Distinct model",
+              "x": [
+                1.0,
+                4.0,
+                8.0,
+                12.0,
+                16.0,
+                24.0,
+                32.0,
+                48.0,
+                64.0
+              ],
+              "y": [
+                1.536366649943512,
+                1.536790649943512,
+                1.5579238308958927,
+                1.6197077743302362,
+                1.6394029531958152,
+                1.7648668340553872,
+                1.8620892354305838,
+                1.9483338533820997,
+                2.382570549728772
+              ],
+              "color": 1
+            }
+          ]
+        }
+      ],
+      "side": "Fewer merge levels\nLarger insertion leaves\n\nRandom insertion: Theta(S^2) per leaf\nAbout n/S leaves\nTotal leaf work: Theta(nS)\n\nSome S values share the same leaves.\nPlateaus are expected.",
+      "footnote": "S=1 is included. Medians of three seeds. Full plots also show ranges and the worst-case bound.",
+      "notes": "4:10-5:10. Fixed n separates the threshold effect from input-size growth. Merge levels shrink only when S crosses an actual recursive subarray length. Larger leaves increase insertion comparisons. Our analytical recurrence uses the real rounded leaf sizes, explaining plateaus. Both true and terminating false comparisons are included in the distinct insertion expectation m(m-1)/4+m-H_m. The curve is an approximation with ties. Source: theory.py and raw stage=tune,n=100000."
+    },
+    {
+      "title": "CPU tuning selected S=12 by the tie-break rule",
+      "layout": "two_charts",
+      "seconds": 75,
+      "charts": [
+        {
+          "title": "(c)(iii): CPU ratios across n",
+          "xlabel": "Threshold S",
+          "ylabel": "CPU / S=1 median",
+          "series": [
+            {
+              "name": "n=1,000",
+              "x": [
+                1.0,
+                4.0,
+                8.0,
+                12.0,
+                16.0,
+                24.0,
+                32.0,
+                48.0,
+                64.0
+              ],
+              "y": [
+                1.0,
+                0.7710843373493975,
+                0.6385542168674698,
+                0.6506024096385542,
+                0.6265060240963854,
+                0.7108433734939759,
+                0.7228915662650601,
+                0.8192771084337349,
+                1.0722891566265058
+              ],
+              "color": 0
+            },
+            {
+              "name": "n=10,000",
+              "x": [
+                1.0,
+                4.0,
+                8.0,
+                12.0,
+                16.0,
+                24.0,
+                32.0,
+                48.0,
+                64.0
+              ],
+              "y": [
+                1.0,
+                0.8275862068965517,
+                0.7844827586206897,
+                0.75,
+                0.7931034482758622,
+                0.810344827586207,
+                0.7155172413793104,
+                0.8879310344827587,
+                0.8017241379310346
+              ],
+              "color": 1
+            },
+            {
+              "name": "n=100,000",
+              "x": [
+                1.0,
+                4.0,
+                8.0,
+                12.0,
+                16.0,
+                24.0,
+                32.0,
+                48.0,
+                64.0
+              ],
+              "y": [
+                1.0,
+                1.119205298013245,
+                1.0,
+                0.9403973509933775,
+                0.9933774834437087,
+                0.9403973509933775,
+                0.8211920529801325,
+                1.0794701986754967,
+                1.0927152317880795
+              ],
+              "color": 2
+            }
+          ]
+        },
+        {
+          "title": "Confirmation at n=1,000,000",
+          "xlabel": "Threshold S",
+          "ylabel": "CPU seconds",
+          "series": [
+            {
+              "name": "Seed 1",
+              "x": [
+                12.0,
+                16.0,
+                32.0
+              ],
+              "y": [
+                2.546875,
+                4.53125,
+                2.578125
+              ],
+              "color": 0
+            },
+            {
+              "name": "Seed 2",
+              "x": [
+                12.0,
+                16.0,
+                32.0
+              ],
+              "y": [
+                2.828125,
+                2.828125,
+                2.78125
+              ],
+              "color": 1
+            },
+            {
+              "name": "Seed 3",
+              "x": [
+                12.0,
+                16.0,
+                32.0
+              ],
+              "y": [
+                2.78125,
+                2.5,
+                2.84375
+              ],
+              "color": 2
+            }
+          ]
+        }
+      ],
+      "footnote": "S=12, 32 tied at 2.78125 s median. The rule chooses smaller S. Three seeds per case.",
+      "notes": "5:10-6:25. CPU is the predeclared primary criterion. Shortlist the three thresholds with the lowest geometric mean of CPU ratios across the tuning sizes. Candidates: 12, 16, 32. Confirm on fresh one-million inputs. Confirmation medians: S=12: 2.78125 s; S=16: 2.82812 s; S=32: 2.78125 s. S=12, 32 tied at 2.78125 s median. The rule chooses smaller S. These overlapping/noisy results do not establish a universal optimum. The chart shows each confirmation seed, and notebook charts show ranges. Report count winners separately from CPU winners. Source: shortlist.json, selection.json and raw tune/confirm. A threshold is best only within the tested search and criterion."
+    },
+    {
+      "title": "Original and hybrid on 10 million integers",
+      "layout": "two_charts",
+      "seconds": 65,
+      "charts": [
+        {
+          "title": "(d): uncounted CPU time",
+          "xlabel": "Algorithm",
+          "ylabel": "CPU seconds",
+          "series": [
+            {
+              "name": "Seed 1",
+              "x": [
+                0.0,
+                1.0
+              ],
+              "y": [
+                78.96875,
+                85.0
+              ],
+              "color": 0
+            },
+            {
+              "name": "Seed 2",
+              "x": [
+                0.0,
+                1.0
+              ],
+              "y": [
+                92.09375,
+                99.90625
+              ],
+              "color": 1
+            },
+            {
+              "name": "Seed 3",
+              "x": [
+                0.0,
+                1.0
+              ],
+              "y": [
+                92.515625,
+                94.078125
+              ],
+              "color": 2
+            }
+          ],
+          "categories": [
+            "Original",
+            "Hybrid S=12"
+          ],
+          "ymin": 0
+        },
+        {
+          "title": "Separate counted runs",
+          "xlabel": "Algorithm",
+          "ylabel": "Comparisons (millions)",
+          "series": [
+            {
+              "name": "Seed 1",
+              "x": [
+                0.0,
+                1.0
+              ],
+              "y": [
+                220.095927,
+                226.418149
+              ],
+              "color": 0
+            },
+            {
+              "name": "Seed 2",
+              "x": [
+                0.0,
+                1.0
+              ],
+              "y": [
+                220.099689,
+                226.424963
+              ],
+              "color": 1
+            },
+            {
+              "name": "Seed 3",
+              "x": [
+                0.0,
+                1.0
+              ],
+              "y": [
+                220.101452,
+                226.417959
+              ],
+              "color": 2
+            }
+          ],
+          "categories": [
+            "Original",
+            "Hybrid S=12"
+          ],
+          "ymin": 0
+        }
+      ],
+      "footnote": "Median CPU: 92.094 s original, 94.078 s hybrid. Median paired speedup 0.929x.",
+      "notes": "6:25-7:30. These are real full-size runs on three fresh seeds. Each line pairs the same unsorted dataset. Speedup is original CPU divided by hybrid CPU for each seed; then take the median. Median paired speedup is 0.929x, observed range 0.922-0.983x. The ratio of medians is 0.979x, a different statistic. Median comparisons are 220,099,689 original and 226,418,149 hybrid, a +2.87% change. Counts exclude timer/counter overhead as explained. The appendix has raw values. Sources: results/full/raw.csv stage=final, plots/full/final_paired_cpu.csv and final_paired_comparisons.csv."
+    },
+    {
+      "title": "Conclusions and questions",
+      "layout": "closing",
+      "seconds": 30,
+      "body": "Hybrid was slower in 3 of 3 final CPU pairs.\nMedian paired speedup: 0.929x.\n\nCPU time and key comparisons measure different costs.\n\nS=12 follows a finite, noisy search and an explicit tie-break.\n\nOne interpreter, one machine, uniform integer inputs.",
+      "subtitle": "2 minutes of Q&A",
+      "notes": "7:30-8:00. State the observed finding without promising it on other machines/distributions. Three repeats describe variability, not statistical significance. Python overhead, copies and recursion explain why count and CPU rankings can differ, but we did not profile causality. Stop at 8:00 and allow Q&A until 10:00. Every member should be ready to answer all topics. Use the appendices only when asked. Source: measured findings and info.pdf."
+    },
+    {
+      "title": "Appendix: exact comparison models",
+      "layout": "columns",
+      "seconds": 0,
+      "left_title": "Merge sort",
+      "left": "Worst comparisons:\nn ceil(log2 n) - 2^ceil(log2 n) + 1\n\nRandom distinct merge of lengths a,b:\na+b - a/(b+1) - b/(a+1)\n\nInsertion expectation for m items:\nm(m-1)/4 + m - H_m\nH_m = 1 + 1/2 + ... + 1/m",
+      "right_title": "Hybrid regimes",
+      "right": "Worst/average (random distinct):\nTheta(n log(n/S) + nS), for S<=n\n\nFixed S: Theta(n log n)\nS=log n: Theta(n log n)\nS=n^alpha: Theta(n^(1+alpha))\nS>=n: insertion only\n\nBuffer O(n), recursion O(log n)",
+      "notes": "Appendix, not in the 8-minute script. Explain the expected trailing run in merge: its expectation is a/(b+1)+b/(a+1), subtracted from total length. Expected insertion inversions omit false comparisons; add m-H_m. Exact discrete ties change the expectation. Public hybrid allocates a buffer even when S>=n, though insertion itself is O(1) extra space. The full expression uses B=min(S,n) to avoid negative log values. Source: docs/theory.md and theory.py."
+    },
+    {
+      "title": "Appendix: raw final measurements",
+      "layout": "table",
+      "seconds": 0,
+      "table": [
+        [
+          "Seed",
+          "Algorithm",
+          "S",
+          "CPU seconds",
+          "Key comparisons"
+        ],
+        [
+          "100900100",
+          "original",
+          "1",
+          "78.968750",
+          "220,095,927"
+        ],
+        [
+          "100900100",
+          "hybrid",
+          "12",
+          "85.000000",
+          "226,418,149"
+        ],
+        [
+          "100900101",
+          "original",
+          "1",
+          "92.093750",
+          "220,099,689"
+        ],
+        [
+          "100900101",
+          "hybrid",
+          "12",
+          "99.906250",
+          "226,424,963"
+        ],
+        [
+          "100900102",
+          "original",
+          "1",
+          "92.515625",
+          "220,101,452"
+        ],
+        [
+          "100900102",
+          "hybrid",
+          "12",
+          "94.078125",
+          "226,417,959"
+        ]
+      ],
+      "footnote": "Each CPU value is from an uncounted run. Counts come from a separate run on identical unsorted data.",
+      "notes": "Appendix. CPU and count are intentionally different modes. All final runs use batch size 1 and n=10,000,000. The three seeds are fresh relative to tuning. Check the raw CSV for wall time and integrity checks. Source: results/full/raw.csv. Speedup per row pair is original CPU/hybrid CPU."
+    },
+    {
+      "title": "Appendix: different criteria, different winners",
+      "layout": "table",
+      "seconds": 0,
+      "table": [
+        [
+          "Input n",
+          "Lowest median CPU S",
+          "Fewest median comparisons S"
+        ],
+        [
+          "1,000",
+          "16",
+          "1"
+        ],
+        [
+          "10,000",
+          "32",
+          "1"
+        ],
+        [
+          "100,000",
+          "32",
+          "1"
+        ]
+      ],
+      "footnote": "Ties use the smaller S. These are per-size descriptive winners, before shortlist confirmation.",
+      "notes": "Appendix. Distinguish raw comparison minimization from practical CPU performance. Finite thresholds, three seeds, one machine. Do not use the tiny smoke run as evidence. The observed min-max CPU bars in the notebook help interpret near ties. Source: plots/full/findings.json and raw tune rows."
+    }
+  ],
+  "main_seconds": 480,
+  "source_config_hash": "0cfc5c7c0a5005d27a3bb518d776b983a8427406ffd6c39541c6c0566dfea02b"
+}

@@ -1,0 +1,87 @@
+{
+  "config": {
+    "name": "smoke",
+    "x": 100,
+    "repeats": 3,
+    "modes": [
+      "timed",
+      "counted"
+    ],
+    "warmup_n": 256,
+    "timed_batch_items": 20000,
+    "fixed_s": 8,
+    "sizes": [
+      1000,
+      3000,
+      10000
+    ],
+    "fixed_n": 3000,
+    "tuning_sizes": [
+      1000,
+      3000
+    ],
+    "thresholds": [
+      1,
+      4,
+      8,
+      16,
+      32
+    ],
+    "shortlist_count": 3,
+    "confirmation_n": 10000,
+    "final_n": 10000,
+    "seed_bases": {
+      "scale": 1200,
+      "tune": 2300,
+      "confirm": 3400,
+      "final": 9500
+    },
+    "primary_criterion": "lowest median uncounted CPU time on confirmation_n; ties choose smaller S",
+    "shortlist_rule": "three lowest geometric means of median CPU ratios to S=1 across tuning sizes",
+    "order_seed": 73129,
+    "exact_histogram_max_x": 1000000
+  },
+  "config_hash": "a7a39d252f9e751d19ea16dbb1afa28a9bb7a5994ed037e179d55230e31342a3",
+  "code_sha256": {
+    "algorithms.py": "e32849c2478d49b3e969ce0b75e0212834ffe044c393f10f249722eb4bdb777a",
+    "experiment.py": "befbd981059f64a2d3def3e487845738ea7fc5b8938d7f46e1da2420c0aacf3f"
+  },
+  "environment": {
+    "python_version": "3.13.6 (tags/v3.13.6:4e66535, Aug  6 2025, 14:36:00) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\Users\\daboi\\Documents\\ChatGPT\\SC2001\\project1\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "hardware": {
+      "logical_cpus": 14,
+      "physical_cores": 12,
+      "total_ram_bytes": 16669302784,
+      "available_ram_bytes_at_start": 1627291648,
+      "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+      "cpu_details": {
+        "Name": "Intel(R) Core(TM) Ultra 5 125U",
+        "NumberOfCores": 12,
+        "NumberOfLogicalProcessors": 14
+      }
+    },
+    "process_time_clock": {
+      "implementation": "GetProcessTimes()",
+      "monotonic": true,
+      "adjustable": false,
+      "resolution": 1e-07
+    },
+    "created_utc": "2026-09-13T10:54:49.282185+00:00",
+    "environment_id": "35aa442b72a0e70d"
+  },
+  "protocol": {
+    "buffer_allocation": "excluded, one reused buffer per dataset",
+    "input_reset": "copy outside timer",
+    "gc": "collected before each sort, disabled during sort, restored afterwards",
+    "execution": "sequential; seeded shuffled case order",
+    "cpu_timer": "time.process_time; uncounted sort only",
+    "wall_timer": "time.perf_counter; separate column",
+    "warmup": "one deterministic small sort per case using the same implementation",
+    "batching": "timed batch size=max(1,timed_batch_items//n); independent pre-timer copies; raw totals and per-sort means saved; all outputs checked",
+    "repetition": "independent input seed per repeat, paired across candidates and modes",
+    "missing_metrics": "empty CSV cells, never zero"
+  }
+}

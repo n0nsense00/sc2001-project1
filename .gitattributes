@@ -1,0 +1,8 @@
+# Keep measured source fingerprints stable across Windows/macOS/Linux checkouts.
+*.py text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.mjs text eol=lf
+*.pdf binary
+*.pptx binary
+*.png binary

@@ -1,0 +1,469 @@
+START tune:1000:0:hybrid:8:counted seed=310100
+DONE tune:1000:0:hybrid:8:counted comparisons=9121 CPU=None wall=None; verified
+START tune:1000:0:hybrid:4:counted seed=310100
+DONE tune:1000:0:hybrid:4:counted comparisons=8804 CPU=None wall=None; verified
+START tune:1000:0:hybrid:1:timed seed=310100
+DONE tune:1000:0:hybrid:1:timed comparisons=None CPU=0.00121875 wall=0.001224483799887821; verified
+START tune:1000:0:hybrid:1:counted seed=310100
+DONE tune:1000:0:hybrid:1:counted comparisons=8728 CPU=None wall=None; verified
+START tune:1000:0:hybrid:32:timed seed=310100
+DONE tune:1000:0:hybrid:32:timed comparisons=None CPU=0.00096875 wall=0.0009481997999828309; verified
+START tune:1000:0:hybrid:8:timed seed=310100
+DONE tune:1000:0:hybrid:8:timed comparisons=None CPU=0.00121875 wall=0.0012607431998476386; verified
+START tune:1000:0:hybrid:24:timed seed=310100
+DONE tune:1000:0:hybrid:24:timed comparisons=None CPU=0.00184375 wall=0.0018439278001897038; verified
+START tune:1000:0:hybrid:12:counted seed=310100
+DONE tune:1000:0:hybrid:12:counted comparisons=9121 CPU=None wall=None; verified
+START tune:1000:0:hybrid:4:timed seed=310100
+DONE tune:1000:0:hybrid:4:timed comparisons=None CPU=0.002 wall=0.002063338799867779; verified
+START tune:1000:0:hybrid:16:counted seed=310100
+DONE tune:1000:0:hybrid:16:counted comparisons=10338 CPU=None wall=None; verified
+START tune:1000:0:hybrid:32:counted seed=310100
+DONE tune:1000:0:hybrid:32:counted comparisons=13322 CPU=None wall=None; verified
+START tune:1000:0:hybrid:64:counted seed=310100
+DONE tune:1000:0:hybrid:64:counted comparisons=19989 CPU=None wall=None; verified
+START tune:1000:0:hybrid:64:timed seed=310100
+DONE tune:1000:0:hybrid:64:timed comparisons=None CPU=0.00278125 wall=0.002818061799975112; verified
+START tune:1000:0:hybrid:48:timed seed=310100
+DONE tune:1000:0:hybrid:48:timed comparisons=None CPU=0.0023125 wall=0.002371121000032872; verified
+START tune:1000:0:hybrid:24:counted seed=310100
+DONE tune:1000:0:hybrid:24:counted comparisons=10338 CPU=None wall=None; verified
+START tune:1000:0:hybrid:16:timed seed=310100
+DONE tune:1000:0:hybrid:16:timed comparisons=None CPU=0.0015 wall=0.0016412039999850094; verified
+START tune:1000:0:hybrid:12:timed seed=310100
+DONE tune:1000:0:hybrid:12:timed comparisons=None CPU=0.0015 wall=0.001537488400004804; verified
+START tune:1000:0:hybrid:48:counted seed=310100
+DONE tune:1000:0:hybrid:48:counted comparisons=13322 CPU=None wall=None; verified
+START tune:1000:1:hybrid:1:counted seed=310101
+DONE tune:1000:1:hybrid:1:counted comparisons=8698 CPU=None wall=None; verified
+START tune:1000:1:hybrid:16:timed seed=310101
+DONE tune:1000:1:hybrid:16:timed comparisons=None CPU=0.0016875 wall=0.0017180963999126107; verified
+START tune:1000:1:hybrid:4:counted seed=310101
+DONE tune:1000:1:hybrid:4:counted comparisons=8757 CPU=None wall=None; verified
+START tune:1000:1:hybrid:8:counted seed=310101
+DONE tune:1000:1:hybrid:8:counted comparisons=9109 CPU=None wall=None; verified
+START tune:1000:1:hybrid:1:timed seed=310101
+DONE tune:1000:1:hybrid:1:timed comparisons=None CPU=0.00259375 wall=0.002701909200055525; verified
+START tune:1000:1:hybrid:24:timed seed=310101
+DONE tune:1000:1:hybrid:24:timed comparisons=None CPU=0.00178125 wall=0.0017900586000178008; verified
+START tune:1000:1:hybrid:4:timed seed=310101
+DONE tune:1000:1:hybrid:4:timed comparisons=None CPU=0.00178125 wall=0.0017762769998516887; verified
+START tune:1000:1:hybrid:8:timed seed=310101
+DONE tune:1000:1:hybrid:8:timed comparisons=None CPU=0.00171875 wall=0.0017339588000904768; verified
+START tune:1000:1:hybrid:32:counted seed=310101
+DONE tune:1000:1:hybrid:32:counted comparisons=13296 CPU=None wall=None; verified
+START tune:1000:1:hybrid:12:timed seed=310101
+DONE tune:1000:1:hybrid:12:timed comparisons=None CPU=0.00171875 wall=0.0017747945999726654; verified
+START tune:1000:1:hybrid:16:counted seed=310101
+DONE tune:1000:1:hybrid:16:counted comparisons=10353 CPU=None wall=None; verified
+START tune:1000:1:hybrid:48:timed seed=310101
+DONE tune:1000:1:hybrid:48:timed comparisons=None CPU=0.00203125 wall=0.0021053506000898777; verified
+START tune:1000:1:hybrid:32:timed seed=310101
+DONE tune:1000:1:hybrid:32:timed comparisons=None CPU=0.001875 wall=0.0019155007998924703; verified
+START tune:1000:1:hybrid:64:timed seed=310101
+DONE tune:1000:1:hybrid:64:timed comparisons=None CPU=0.0028125 wall=0.0028597919999156147; verified
+START tune:1000:1:hybrid:12:counted seed=310101
+DONE tune:1000:1:hybrid:12:counted comparisons=9109 CPU=None wall=None; verified
+START tune:1000:1:hybrid:24:counted seed=310101
+DONE tune:1000:1:hybrid:24:counted comparisons=10353 CPU=None wall=None; verified
+START tune:1000:1:hybrid:64:counted seed=310101
+DONE tune:1000:1:hybrid:64:counted comparisons=20528 CPU=None wall=None; verified
+START tune:1000:1:hybrid:48:counted seed=310101
+DONE tune:1000:1:hybrid:48:counted comparisons=13296 CPU=None wall=None; verified
+START tune:1000:2:hybrid:32:timed seed=310102
+DONE tune:1000:2:hybrid:32:timed comparisons=None CPU=0.00209375 wall=0.0020935490000993013; verified
+START tune:1000:2:hybrid:48:counted seed=310102
+DONE tune:1000:2:hybrid:48:counted comparisons=13576 CPU=None wall=None; verified
+START tune:1000:2:hybrid:24:timed seed=310102
+DONE tune:1000:2:hybrid:24:timed comparisons=None CPU=0.00196875 wall=0.0019581801998429; verified
+START tune:1000:2:hybrid:16:timed seed=310102
+DONE tune:1000:2:hybrid:16:timed comparisons=None CPU=0.001625 wall=0.001726375399855897; verified
+START tune:1000:2:hybrid:8:timed seed=310102
+DONE tune:1000:2:hybrid:8:timed comparisons=None CPU=0.00165625 wall=0.0016924246000126005; verified
+START tune:1000:2:hybrid:16:counted seed=310102
+DONE tune:1000:2:hybrid:16:counted comparisons=10282 CPU=None wall=None; verified
+START tune:1000:2:hybrid:4:counted seed=310102
+DONE tune:1000:2:hybrid:4:counted comparisons=8767 CPU=None wall=None; verified
+START tune:1000:2:hybrid:1:timed seed=310102
+DONE tune:1000:2:hybrid:1:timed comparisons=None CPU=0.002625 wall=0.0026639970000833274; verified
+START tune:1000:2:hybrid:1:counted seed=310102
+DONE tune:1000:2:hybrid:1:counted comparisons=8706 CPU=None wall=None; verified
+START tune:1000:2:hybrid:8:counted seed=310102
+DONE tune:1000:2:hybrid:8:counted comparisons=9098 CPU=None wall=None; verified
+START tune:1000:2:hybrid:12:timed seed=310102
+DONE tune:1000:2:hybrid:12:timed comparisons=None CPU=0.0016875 wall=0.0017520598000846804; verified
+START tune:1000:2:hybrid:12:counted seed=310102
+DONE tune:1000:2:hybrid:12:counted comparisons=9098 CPU=None wall=None; verified
+START tune:1000:2:hybrid:64:timed seed=310102
+DONE tune:1000:2:hybrid:64:timed comparisons=None CPU=0.00246875 wall=0.0025734972001519056; verified
+START tune:1000:2:hybrid:32:counted seed=310102
+DONE tune:1000:2:hybrid:32:counted comparisons=13576 CPU=None wall=None; verified
+START tune:1000:2:hybrid:48:timed seed=310102
+DONE tune:1000:2:hybrid:48:timed comparisons=None CPU=0.002125 wall=0.0021482716000173242; verified
+START tune:1000:2:hybrid:4:timed seed=310102
+DONE tune:1000:2:hybrid:4:timed comparisons=None CPU=0.0020625 wall=0.002050853200023994; verified
+START tune:1000:2:hybrid:64:counted seed=310102
+DONE tune:1000:2:hybrid:64:counted comparisons=20179 CPU=None wall=None; verified
+START tune:1000:2:hybrid:24:counted seed=310102
+DONE tune:1000:2:hybrid:24:counted comparisons=10282 CPU=None wall=None; verified
+START tune:10000:0:hybrid:64:timed seed=400100
+DONE tune:10000:0:hybrid:64:timed comparisons=None CPU=0.0290625 wall=0.02969891400076449; verified
+START tune:10000:0:hybrid:16:counted seed=400100
+DONE tune:10000:0:hybrid:16:counted comparisons=127339 CPU=None wall=None; verified
+START tune:10000:0:hybrid:24:timed seed=400100
+DONE tune:10000:0:hybrid:24:timed comparisons=None CPU=0.0284375 wall=0.028370394001249223; verified
+START tune:10000:0:hybrid:24:counted seed=400100
+DONE tune:10000:0:hybrid:24:counted comparisons=143880 CPU=None wall=None; verified
+START tune:10000:0:hybrid:4:timed seed=400100
+DONE tune:10000:0:hybrid:4:timed comparisons=None CPU=0.03 wall=0.030170301999896766; verified
+START tune:10000:0:hybrid:64:counted seed=400100
+DONE tune:10000:0:hybrid:64:counted comparisons=184257 CPU=None wall=None; verified
+START tune:10000:0:hybrid:48:timed seed=400100
+DONE tune:10000:0:hybrid:48:timed comparisons=None CPU=0.0321875 wall=0.032235753999557346; verified
+START tune:10000:0:hybrid:16:timed seed=400100
+DONE tune:10000:0:hybrid:16:timed comparisons=None CPU=0.0309375 wall=0.031094058000016956; verified
+START tune:10000:0:hybrid:1:counted seed=400100
+DONE tune:10000:0:hybrid:1:counted comparisons=120499 CPU=None wall=None; verified
+START tune:10000:0:hybrid:8:timed seed=400100
+DONE tune:10000:0:hybrid:8:timed comparisons=None CPU=0.0284375 wall=0.02919758199946955; verified
+START tune:10000:0:hybrid:48:counted seed=400100
+DONE tune:10000:0:hybrid:48:counted comparisons=184257 CPU=None wall=None; verified
+START tune:10000:0:hybrid:32:counted seed=400100
+DONE tune:10000:0:hybrid:32:counted comparisons=143880 CPU=None wall=None; verified
+START tune:10000:0:hybrid:12:counted seed=400100
+DONE tune:10000:0:hybrid:12:counted comparisons=127339 CPU=None wall=None; verified
+START tune:10000:0:hybrid:8:counted seed=400100
+DONE tune:10000:0:hybrid:8:counted comparisons=121589 CPU=None wall=None; verified
+START tune:10000:0:hybrid:4:counted seed=400100
+DONE tune:10000:0:hybrid:4:counted comparisons=120575 CPU=None wall=None; verified
+START tune:10000:0:hybrid:32:timed seed=400100
+DONE tune:10000:0:hybrid:32:timed comparisons=None CPU=0.023125 wall=0.023547785999253393; verified
+START tune:10000:0:hybrid:12:timed seed=400100
+DONE tune:10000:0:hybrid:12:timed comparisons=None CPU=0.0259375 wall=0.02618345000082627; verified
+START tune:10000:0:hybrid:1:timed seed=400100
+DONE tune:10000:0:hybrid:1:timed comparisons=None CPU=0.034375 wall=0.03536587599897757; verified
+START tune:10000:1:hybrid:1:timed seed=400101
+DONE tune:10000:1:hybrid:1:timed comparisons=None CPU=0.03625 wall=0.03803875599987805; verified
+START tune:10000:1:hybrid:12:timed seed=400101
+DONE tune:10000:1:hybrid:12:timed comparisons=None CPU=0.0271875 wall=0.028052336000837386; verified
+START tune:10000:1:hybrid:12:counted seed=400101
+DONE tune:10000:1:hybrid:12:counted comparisons=127144 CPU=None wall=None; verified
+START tune:10000:1:hybrid:24:timed seed=400101
+DONE tune:10000:1:hybrid:24:timed comparisons=None CPU=0.029375 wall=0.030167771999258547; verified
+START tune:10000:1:hybrid:16:counted seed=400101
+DONE tune:10000:1:hybrid:16:counted comparisons=127144 CPU=None wall=None; verified
+START tune:10000:1:hybrid:1:counted seed=400101
+DONE tune:10000:1:hybrid:1:counted comparisons=120589 CPU=None wall=None; verified
+START tune:10000:1:hybrid:4:counted seed=400101
+DONE tune:10000:1:hybrid:4:counted comparisons=120604 CPU=None wall=None; verified
+START tune:10000:1:hybrid:16:timed seed=400101
+DONE tune:10000:1:hybrid:16:timed comparisons=None CPU=0.0228125 wall=0.023440087998751552; verified
+START tune:10000:1:hybrid:32:timed seed=400101
+DONE tune:10000:1:hybrid:32:timed comparisons=None CPU=0.0259375 wall=0.0264329839986749; verified
+START tune:10000:1:hybrid:32:counted seed=400101
+DONE tune:10000:1:hybrid:32:counted comparisons=143384 CPU=None wall=None; verified
+START tune:10000:1:hybrid:64:counted seed=400101
+DONE tune:10000:1:hybrid:64:counted comparisons=183386 CPU=None wall=None; verified
+START tune:10000:1:hybrid:8:timed seed=400101
+DONE tune:10000:1:hybrid:8:timed comparisons=None CPU=0.0259375 wall=0.026690644000191242; verified
+START tune:10000:1:hybrid:48:timed seed=400101
+DONE tune:10000:1:hybrid:48:timed comparisons=None CPU=0.0296875 wall=0.030445575998164713; verified
+START tune:10000:1:hybrid:4:timed seed=400101
+DONE tune:10000:1:hybrid:4:timed comparisons=None CPU=0.030625 wall=0.03075575000140816; verified
+START tune:10000:1:hybrid:48:counted seed=400101
+DONE tune:10000:1:hybrid:48:counted comparisons=183386 CPU=None wall=None; verified
+START tune:10000:1:hybrid:64:timed seed=400101
+DONE tune:10000:1:hybrid:64:timed comparisons=None CPU=0.0284375 wall=0.029386531999334692; verified
+START tune:10000:1:hybrid:24:counted seed=400101
+DONE tune:10000:1:hybrid:24:counted comparisons=143384 CPU=None wall=None; verified
+START tune:10000:1:hybrid:8:counted seed=400101
+DONE tune:10000:1:hybrid:8:counted comparisons=121596 CPU=None wall=None; verified
+START tune:10000:2:hybrid:48:counted seed=400102
+DONE tune:10000:2:hybrid:48:counted comparisons=183295 CPU=None wall=None; verified
+START tune:10000:2:hybrid:64:counted seed=400102
+DONE tune:10000:2:hybrid:64:counted comparisons=183295 CPU=None wall=None; verified
+START tune:10000:2:hybrid:12:counted seed=400102
+DONE tune:10000:2:hybrid:12:counted comparisons=127305 CPU=None wall=None; verified
+START tune:10000:2:hybrid:64:timed seed=400102
+DONE tune:10000:2:hybrid:64:timed comparisons=None CPU=0.030625 wall=0.031031730000395327; verified
+START tune:10000:2:hybrid:24:counted seed=400102
+DONE tune:10000:2:hybrid:24:counted comparisons=143492 CPU=None wall=None; verified
+START tune:10000:2:hybrid:32:counted seed=400102
+DONE tune:10000:2:hybrid:32:counted comparisons=143492 CPU=None wall=None; verified
+START tune:10000:2:hybrid:1:timed seed=400102
+DONE tune:10000:2:hybrid:1:timed comparisons=None CPU=0.040625 wall=0.041872364000882956; verified
+START tune:10000:2:hybrid:1:counted seed=400102
+DONE tune:10000:2:hybrid:1:counted comparisons=120434 CPU=None wall=None; verified
+START tune:10000:2:hybrid:24:timed seed=400102
+DONE tune:10000:2:hybrid:24:timed comparisons=None CPU=0.030625 wall=0.030828139998484404; verified
+START tune:10000:2:hybrid:4:timed seed=400102
+DONE tune:10000:2:hybrid:4:timed comparisons=None CPU=0.025625 wall=0.026145383999682963; verified
+START tune:10000:2:hybrid:16:counted seed=400102
+DONE tune:10000:2:hybrid:16:counted comparisons=127305 CPU=None wall=None; verified
+START tune:10000:2:hybrid:32:timed seed=400102
+DONE tune:10000:2:hybrid:32:timed comparisons=None CPU=0.03 wall=0.030570693998597562; verified
+START tune:10000:2:hybrid:12:timed seed=400102
+DONE tune:10000:2:hybrid:12:timed comparisons=None CPU=0.0278125 wall=0.02853544400073588; verified
+START tune:10000:2:hybrid:8:counted seed=400102
+DONE tune:10000:2:hybrid:8:counted comparisons=121497 CPU=None wall=None; verified
+START tune:10000:2:hybrid:4:counted seed=400102
+DONE tune:10000:2:hybrid:4:counted comparisons=120484 CPU=None wall=None; verified
+START tune:10000:2:hybrid:16:timed seed=400102
+DONE tune:10000:2:hybrid:16:timed comparisons=None CPU=0.02875 wall=0.0294396060006693; verified
+START tune:10000:2:hybrid:8:timed seed=400102
+DONE tune:10000:2:hybrid:8:timed comparisons=None CPU=0.03375 wall=0.03409325200133026; verified
+START tune:10000:2:hybrid:48:timed seed=400102
+DONE tune:10000:2:hybrid:48:timed comparisons=None CPU=0.0325 wall=0.03324694400187582; verified
+START tune:100000:0:hybrid:12:counted seed=1300100
+DONE tune:100000:0:hybrid:12:counted comparisons=1619532 CPU=None wall=None; verified
+START tune:100000:0:hybrid:32:counted seed=1300100
+DONE tune:100000:0:hybrid:32:counted comparisons=1861359 CPU=None wall=None; verified
+START tune:100000:0:hybrid:64:counted seed=1300100
+DONE tune:100000:0:hybrid:64:counted comparisons=2384656 CPU=None wall=None; verified
+START tune:100000:0:hybrid:1:timed seed=1300100
+DONE tune:100000:0:hybrid:1:timed comparisons=None CPU=0.471875 wall=0.4782277799909934; verified
+START tune:100000:0:hybrid:24:timed seed=1300100
+DONE tune:100000:0:hybrid:24:timed comparisons=None CPU=0.46875 wall=0.47675290000624954; verified
+START tune:100000:0:hybrid:16:timed seed=1300100
+DONE tune:100000:0:hybrid:16:timed comparisons=None CPU=0.471875 wall=0.4793066999875009; verified
+START tune:100000:0:hybrid:12:timed seed=1300100
+DONE tune:100000:0:hybrid:12:timed comparisons=None CPU=0.384375 wall=0.3987864000024274; verified
+START tune:100000:0:hybrid:4:timed seed=1300100
+DONE tune:100000:0:hybrid:4:timed comparisons=None CPU=0.528125 wall=0.5385444200132042; verified
+START tune:100000:0:hybrid:24:counted seed=1300100
+DONE tune:100000:0:hybrid:24:counted comparisons=1763598 CPU=None wall=None; verified
+START tune:100000:0:hybrid:32:timed seed=1300100
+DONE tune:100000:0:hybrid:32:timed comparisons=None CPU=0.503125 wall=0.5086385000031441; verified
+START tune:100000:0:hybrid:4:counted seed=1300100
+DONE tune:100000:0:hybrid:4:counted comparisons=1536809 CPU=None wall=None; verified
+START tune:100000:0:hybrid:48:timed seed=1300100
+DONE tune:100000:0:hybrid:48:timed comparisons=None CPU=0.534375 wall=0.5505083999829367; verified
+START tune:100000:0:hybrid:8:counted seed=1300100
+DONE tune:100000:0:hybrid:8:counted comparisons=1558080 CPU=None wall=None; verified
+START tune:100000:0:hybrid:1:counted seed=1300100
+DONE tune:100000:0:hybrid:1:counted comparisons=1536514 CPU=None wall=None; verified
+START tune:100000:0:hybrid:16:counted seed=1300100
+DONE tune:100000:0:hybrid:16:counted comparisons=1639117 CPU=None wall=None; verified
+START tune:100000:0:hybrid:64:timed seed=1300100
+DONE tune:100000:0:hybrid:64:timed comparisons=None CPU=0.515625 wall=0.5183293600101024; verified
+START tune:100000:0:hybrid:48:counted seed=1300100
+DONE tune:100000:0:hybrid:48:counted comparisons=1946724 CPU=None wall=None; verified
+START tune:100000:0:hybrid:8:timed seed=1300100
+DONE tune:100000:0:hybrid:8:timed comparisons=None CPU=0.496875 wall=0.5087275199824944; verified
+START tune:100000:1:hybrid:4:timed seed=1300101
+DONE tune:100000:1:hybrid:4:timed comparisons=None CPU=0.546875 wall=0.5634700800059363; verified
+START tune:100000:1:hybrid:48:timed seed=1300101
+DONE tune:100000:1:hybrid:48:timed comparisons=None CPU=0.509375 wall=0.5357620999915526; verified
+START tune:100000:1:hybrid:64:timed seed=1300101
+DONE tune:100000:1:hybrid:64:timed comparisons=None CPU=0.59375 wall=0.6205569599987939; verified
+START tune:100000:1:hybrid:12:timed seed=1300101
+DONE tune:100000:1:hybrid:12:timed comparisons=None CPU=0.496875 wall=0.5137626599986106; verified
+START tune:100000:1:hybrid:32:counted seed=1300101
+DONE tune:100000:1:hybrid:32:counted comparisons=1862878 CPU=None wall=None; verified
+START tune:100000:1:hybrid:8:timed seed=1300101
+DONE tune:100000:1:hybrid:8:timed comparisons=None CPU=0.471875 wall=0.4796400399878621; verified
+START tune:100000:1:hybrid:8:counted seed=1300101
+DONE tune:100000:1:hybrid:8:counted comparisons=1558020 CPU=None wall=None; verified
+START tune:100000:1:hybrid:1:timed seed=1300101
+DONE tune:100000:1:hybrid:1:timed comparisons=None CPU=0.609375 wall=0.6160820000106468; verified
+START tune:100000:1:hybrid:64:counted seed=1300101
+DONE tune:100000:1:hybrid:64:counted comparisons=2385133 CPU=None wall=None; verified
+START tune:100000:1:hybrid:48:counted seed=1300101
+DONE tune:100000:1:hybrid:48:counted comparisons=1950541 CPU=None wall=None; verified
+START tune:100000:1:hybrid:16:counted seed=1300101
+DONE tune:100000:1:hybrid:16:counted comparisons=1639933 CPU=None wall=None; verified
+START tune:100000:1:hybrid:16:timed seed=1300101
+DONE tune:100000:1:hybrid:16:timed comparisons=None CPU=0.46875 wall=0.47915906000416725; verified
+START tune:100000:1:hybrid:32:timed seed=1300101
+DONE tune:100000:1:hybrid:32:timed comparisons=None CPU=0.3875 wall=0.39710947999265045; verified
+START tune:100000:1:hybrid:24:counted seed=1300101
+DONE tune:100000:1:hybrid:24:counted comparisons=1766303 CPU=None wall=None; verified
+START tune:100000:1:hybrid:1:counted seed=1300101
+DONE tune:100000:1:hybrid:1:counted comparisons=1536162 CPU=None wall=None; verified
+START tune:100000:1:hybrid:4:counted seed=1300101
+DONE tune:100000:1:hybrid:4:counted comparisons=1536784 CPU=None wall=None; verified
+START tune:100000:1:hybrid:12:counted seed=1300101
+DONE tune:100000:1:hybrid:12:counted comparisons=1620415 CPU=None wall=None; verified
+START tune:100000:1:hybrid:24:timed seed=1300101
+DONE tune:100000:1:hybrid:24:timed comparisons=None CPU=0.440625 wall=0.4473312800051644; verified
+START tune:100000:2:hybrid:8:timed seed=1300102
+DONE tune:100000:2:hybrid:8:timed comparisons=None CPU=0.415625 wall=0.4302193999988958; verified
+START tune:100000:2:hybrid:12:counted seed=1300102
+DONE tune:100000:2:hybrid:12:counted comparisons=1620212 CPU=None wall=None; verified
+START tune:100000:2:hybrid:8:counted seed=1300102
+DONE tune:100000:2:hybrid:8:counted comparisons=1558194 CPU=None wall=None; verified
+START tune:100000:2:hybrid:4:timed seed=1300102
+DONE tune:100000:2:hybrid:4:timed comparisons=None CPU=0.428125 wall=0.4314250199822709; verified
+START tune:100000:2:hybrid:48:timed seed=1300102
+DONE tune:100000:2:hybrid:48:timed comparisons=None CPU=0.4375 wall=0.4497088399948552; verified
+START tune:100000:2:hybrid:4:counted seed=1300102
+DONE tune:100000:2:hybrid:4:counted comparisons=1536928 CPU=None wall=None; verified
+START tune:100000:2:hybrid:12:timed seed=1300102
+DONE tune:100000:2:hybrid:12:timed comparisons=None CPU=0.44375 wall=0.4508885199902579; verified
+START tune:100000:2:hybrid:32:counted seed=1300102
+DONE tune:100000:2:hybrid:32:counted comparisons=1863730 CPU=None wall=None; verified
+START tune:100000:2:hybrid:64:counted seed=1300102
+DONE tune:100000:2:hybrid:64:counted comparisons=2382206 CPU=None wall=None; verified
+START tune:100000:2:hybrid:48:counted seed=1300102
+DONE tune:100000:2:hybrid:48:counted comparisons=1949853 CPU=None wall=None; verified
+START tune:100000:2:hybrid:64:timed seed=1300102
+DONE tune:100000:2:hybrid:64:timed comparisons=None CPU=0.425 wall=0.4411415599985048; verified
+START tune:100000:2:hybrid:24:timed seed=1300102
+DONE tune:100000:2:hybrid:24:timed comparisons=None CPU=0.44375 wall=0.4484395599924028; verified
+START tune:100000:2:hybrid:16:counted seed=1300102
+DONE tune:100000:2:hybrid:16:counted comparisons=1640437 CPU=None wall=None; verified
+START tune:100000:2:hybrid:1:counted seed=1300102
+DONE tune:100000:2:hybrid:1:counted comparisons=1536373 CPU=None wall=None; verified
+START tune:100000:2:hybrid:1:timed seed=1300102
+DONE tune:100000:2:hybrid:1:timed comparisons=None CPU=0.340625 wall=0.3438398799858987; verified
+START tune:100000:2:hybrid:32:timed seed=1300102
+DONE tune:100000:2:hybrid:32:timed comparisons=None CPU=0.203125 wall=0.2048881399910897; verified
+START tune:100000:2:hybrid:24:counted seed=1300102
+DONE tune:100000:2:hybrid:24:counted comparisons=1765527 CPU=None wall=None; verified
+START tune:100000:2:hybrid:16:timed seed=1300102
+DONE tune:100000:2:hybrid:16:timed comparisons=None CPU=0.19375 wall=0.19313821999821812; verified
+START confirm:1000000:0:hybrid:12:timed seed=10400100
+DONE confirm:1000000:0:hybrid:12:timed comparisons=None CPU=2.546875 wall=2.577051500091329; verified
+START confirm:1000000:0:hybrid:32:counted seed=10400100
+DONE confirm:1000000:0:hybrid:32:counted comparisons=23184259 CPU=None wall=None; verified
+START confirm:1000000:0:hybrid:32:timed seed=10400100
+DONE confirm:1000000:0:hybrid:32:timed comparisons=None CPU=2.578125 wall=2.6132930000312626; verified
+START confirm:1000000:0:hybrid:16:counted seed=10400100
+DONE confirm:1000000:0:hybrid:16:counted comparisons=20220976 CPU=None wall=None; verified
+START confirm:1000000:0:hybrid:16:timed seed=10400100
+DONE confirm:1000000:0:hybrid:16:timed comparisons=None CPU=4.53125 wall=4.720908100018278; verified
+START confirm:1000000:0:hybrid:12:counted seed=10400100
+DONE confirm:1000000:0:hybrid:12:counted comparisons=19071105 CPU=None wall=None; verified
+START confirm:1000000:1:hybrid:12:timed seed=10400101
+DONE confirm:1000000:1:hybrid:12:timed comparisons=None CPU=2.828125 wall=2.857295499998145; verified
+START confirm:1000000:1:hybrid:32:timed seed=10400101
+DONE confirm:1000000:1:hybrid:32:timed comparisons=None CPU=2.78125 wall=2.850811899988912; verified
+START confirm:1000000:1:hybrid:16:counted seed=10400101
+DONE confirm:1000000:1:hybrid:16:counted comparisons=20223876 CPU=None wall=None; verified
+START confirm:1000000:1:hybrid:16:timed seed=10400101
+DONE confirm:1000000:1:hybrid:16:timed comparisons=None CPU=2.828125 wall=2.8918732999591157; verified
+START confirm:1000000:1:hybrid:12:counted seed=10400101
+DONE confirm:1000000:1:hybrid:12:counted comparisons=19072727 CPU=None wall=None; verified
+START confirm:1000000:1:hybrid:32:counted seed=10400101
+DONE confirm:1000000:1:hybrid:32:counted comparisons=23188127 CPU=None wall=None; verified
+START confirm:1000000:2:hybrid:16:timed seed=10400102
+DONE confirm:1000000:2:hybrid:16:timed comparisons=None CPU=2.5 wall=2.58216029999312; verified
+START confirm:1000000:2:hybrid:16:counted seed=10400102
+DONE confirm:1000000:2:hybrid:16:counted comparisons=20226092 CPU=None wall=None; verified
+START confirm:1000000:2:hybrid:12:counted seed=10400102
+DONE confirm:1000000:2:hybrid:12:counted comparisons=19074177 CPU=None wall=None; verified
+START confirm:1000000:2:hybrid:32:timed seed=10400102
+DONE confirm:1000000:2:hybrid:32:timed comparisons=None CPU=2.84375 wall=2.9723917999072; verified
+START confirm:1000000:2:hybrid:32:counted seed=10400102
+DONE confirm:1000000:2:hybrid:32:counted comparisons=23194723 CPU=None wall=None; verified
+START confirm:1000000:2:hybrid:12:timed seed=10400102
+DONE confirm:1000000:2:hybrid:12:timed comparisons=None CPU=2.78125 wall=2.827131300000474; verified
+START scale:1000:0:hybrid:16:counted seed=210100
+DONE scale:1000:0:hybrid:16:counted comparisons=10462 CPU=None wall=None; verified
+START scale:1000:0:hybrid:16:timed seed=210100
+DONE scale:1000:0:hybrid:16:timed comparisons=None CPU=0.00103125 wall=0.0010434723999351264; verified
+START scale:1000:1:hybrid:16:counted seed=210101
+DONE scale:1000:1:hybrid:16:counted comparisons=10387 CPU=None wall=None; verified
+START scale:1000:1:hybrid:16:timed seed=210101
+DONE scale:1000:1:hybrid:16:timed comparisons=None CPU=0.00109375 wall=0.001099364599911496; verified
+START scale:1000:2:hybrid:16:timed seed=210102
+DONE scale:1000:2:hybrid:16:timed comparisons=None CPU=0.0013125 wall=0.0013275986001826823; verified
+START scale:1000:2:hybrid:16:counted seed=210102
+DONE scale:1000:2:hybrid:16:counted comparisons=10304 CPU=None wall=None; verified
+START scale:10000:0:hybrid:16:timed seed=300100
+DONE scale:10000:0:hybrid:16:timed comparisons=None CPU=0.0228125 wall=0.023035687999799846; verified
+START scale:10000:0:hybrid:16:counted seed=300100
+DONE scale:10000:0:hybrid:16:counted comparisons=126906 CPU=None wall=None; verified
+START scale:10000:1:hybrid:16:timed seed=300101
+DONE scale:10000:1:hybrid:16:timed comparisons=None CPU=0.0178125 wall=0.018327824000734835; verified
+START scale:10000:1:hybrid:16:counted seed=300101
+DONE scale:10000:1:hybrid:16:counted comparisons=127279 CPU=None wall=None; verified
+START scale:10000:2:hybrid:16:timed seed=300102
+DONE scale:10000:2:hybrid:16:timed comparisons=None CPU=0.0175 wall=0.01795359600102529; verified
+START scale:10000:2:hybrid:16:counted seed=300102
+DONE scale:10000:2:hybrid:16:counted comparisons=127173 CPU=None wall=None; verified
+START scale:100000:0:hybrid:16:counted seed=1200100
+DONE scale:100000:0:hybrid:16:counted comparisons=1639253 CPU=None wall=None; verified
+START scale:100000:0:hybrid:16:timed seed=1200100
+DONE scale:100000:0:hybrid:16:timed comparisons=None CPU=0.20625 wall=0.20524134000297636; verified
+START scale:100000:1:hybrid:16:timed seed=1200101
+DONE scale:100000:1:hybrid:16:timed comparisons=None CPU=0.203125 wall=0.20514301999937742; verified
+START scale:100000:1:hybrid:16:counted seed=1200101
+DONE scale:100000:1:hybrid:16:counted comparisons=1639745 CPU=None wall=None; verified
+START scale:100000:2:hybrid:16:timed seed=1200102
+DONE scale:100000:2:hybrid:16:timed comparisons=None CPU=0.1875 wall=0.19030724000185728; verified
+START scale:100000:2:hybrid:16:counted seed=1200102
+DONE scale:100000:2:hybrid:16:counted comparisons=1639466 CPU=None wall=None; verified
+START scale:300000:0:hybrid:16:timed seed=3200100
+DONE scale:300000:0:hybrid:16:timed comparisons=None CPU=0.78125 wall=0.7945443000644445; verified
+START scale:300000:0:hybrid:16:counted seed=3200100
+DONE scale:300000:0:hybrid:16:counted comparisons=5259982 CPU=None wall=None; verified
+START scale:300000:1:hybrid:16:timed seed=3200101
+DONE scale:300000:1:hybrid:16:timed comparisons=None CPU=0.703125 wall=0.7328588999807835; verified
+START scale:300000:1:hybrid:16:counted seed=3200101
+DONE scale:300000:1:hybrid:16:counted comparisons=5258783 CPU=None wall=None; verified
+START scale:300000:2:hybrid:16:timed seed=3200102
+DONE scale:300000:2:hybrid:16:timed comparisons=None CPU=0.734375 wall=0.7578776999143884; verified
+START scale:300000:2:hybrid:16:counted seed=3200102
+DONE scale:300000:2:hybrid:16:counted comparisons=5257918 CPU=None wall=None; verified
+START scale:1000000:0:hybrid:16:timed seed=10200100
+DONE scale:1000000:0:hybrid:16:timed comparisons=None CPU=3.25 wall=3.3688292000442743; verified
+START scale:1000000:0:hybrid:16:counted seed=10200100
+DONE scale:1000000:0:hybrid:16:counted comparisons=20221425 CPU=None wall=None; verified
+START scale:1000000:1:hybrid:16:timed seed=10200101
+DONE scale:1000000:1:hybrid:16:timed comparisons=None CPU=5.40625 wall=5.5071098000044; verified
+START scale:1000000:1:hybrid:16:counted seed=10200101
+DONE scale:1000000:1:hybrid:16:counted comparisons=20229003 CPU=None wall=None; verified
+START scale:1000000:2:hybrid:16:timed seed=10200102
+DONE scale:1000000:2:hybrid:16:timed comparisons=None CPU=5.75 wall=5.937159999972209; verified
+START scale:1000000:2:hybrid:16:counted seed=10200102
+DONE scale:1000000:2:hybrid:16:counted comparisons=20220203 CPU=None wall=None; verified
+START scale:3000000:0:hybrid:16:timed seed=30200100
+DONE scale:3000000:0:hybrid:16:timed comparisons=None CPU=23.09375 wall=23.63446470000781; verified
+START scale:3000000:0:hybrid:16:counted seed=30200100
+DONE scale:3000000:0:hybrid:16:counted comparisons=63550952 CPU=None wall=None; verified
+START scale:3000000:1:hybrid:16:counted seed=30200101
+DONE scale:3000000:1:hybrid:16:counted comparisons=63552923 CPU=None wall=None; verified
+START scale:3000000:1:hybrid:16:timed seed=30200101
+DONE scale:3000000:1:hybrid:16:timed comparisons=None CPU=27.34375 wall=28.029552099993452; verified
+START scale:3000000:2:hybrid:16:counted seed=30200102
+DONE scale:3000000:2:hybrid:16:counted comparisons=63555337 CPU=None wall=None; verified
+START scale:3000000:2:hybrid:16:timed seed=30200102
+DONE scale:3000000:2:hybrid:16:timed comparisons=None CPU=25.078125 wall=25.449490800034255; verified
+START scale:10000000:0:hybrid:16:counted seed=100200100
+DONE scale:10000000:0:hybrid:16:counted comparisons=226419005 CPU=None wall=None; verified
+START scale:10000000:0:hybrid:16:timed seed=100200100
+DONE scale:10000000:0:hybrid:16:timed comparisons=None CPU=74.15625 wall=76.14403409999795; verified
+START scale:10000000:1:hybrid:16:timed seed=100200101
+DONE scale:10000000:1:hybrid:16:timed comparisons=None CPU=46.734375 wall=48.252427299972624; verified
+START scale:10000000:1:hybrid:16:counted seed=100200101
+DONE scale:10000000:1:hybrid:16:counted comparisons=226420353 CPU=None wall=None; verified
+START scale:10000000:2:hybrid:16:counted seed=100200102
+DONE scale:10000000:2:hybrid:16:counted comparisons=226412108 CPU=None wall=None; verified
+START scale:10000000:2:hybrid:16:timed seed=100200102
+DONE scale:10000000:2:hybrid:16:timed comparisons=None CPU=85.0625 wall=86.54371230001561; verified
+START final:10000000:0:original:1:counted seed=100900100
+DONE final:10000000:0:original:1:counted comparisons=220095927 CPU=None wall=None; verified
+START final:10000000:0:hybrid:12:counted seed=100900100
+DONE final:10000000:0:hybrid:12:counted comparisons=226418149 CPU=None wall=None; verified
+START final:10000000:0:hybrid:12:timed seed=100900100
+DONE final:10000000:0:hybrid:12:timed comparisons=None CPU=85.0 wall=90.41749639995396; verified
+START final:10000000:0:original:1:timed seed=100900100
+DONE final:10000000:0:original:1:timed comparisons=None CPU=78.96875 wall=80.7207307999488; verified
+START final:10000000:1:hybrid:12:counted seed=100900101
+DONE final:10000000:1:hybrid:12:counted comparisons=226424963 CPU=None wall=None; verified
+START final:10000000:1:original:1:counted seed=100900101
+DONE final:10000000:1:original:1:counted comparisons=220099689 CPU=None wall=None; verified
+START final:10000000:1:original:1:timed seed=100900101
+DONE final:10000000:1:original:1:timed comparisons=None CPU=92.09375 wall=93.81681940006092; verified
+START final:10000000:1:hybrid:12:timed seed=100900101
+DONE final:10000000:1:hybrid:12:timed comparisons=None CPU=99.90625 wall=101.87633909995202; verified
+START final:10000000:2:hybrid:12:counted seed=100900102
+DONE final:10000000:2:hybrid:12:counted comparisons=226417959 CPU=None wall=None; verified
+START final:10000000:2:original:1:counted seed=100900102
+DONE final:10000000:2:original:1:counted comparisons=220101452 CPU=None wall=None; verified
+START final:10000000:2:original:1:timed seed=100900102
+DONE final:10000000:2:original:1:timed comparisons=None CPU=92.515625 wall=94.18875730002765; verified
+START final:10000000:2:hybrid:12:timed seed=100900102
+DONE final:10000000:2:hybrid:12:timed comparisons=None CPU=94.078125 wall=95.76687150006182; verified
+Saved 234 completed measurements to results\full\raw.csv

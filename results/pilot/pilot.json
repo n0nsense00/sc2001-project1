@@ -1,0 +1,30 @@
+{
+  "note": "Estimates ONLY; n log n scaling does not capture cache, memory or noise",
+  "measurements": [
+    {
+      "algorithm": "original",
+      "pilot_n": 100000,
+      "pilot_cpu_seconds": 0.1875,
+      "comparisons": null,
+      "estimated_10m_seconds": 26.25
+    },
+    {
+      "algorithm": "hybrid_s16",
+      "pilot_n": 100000,
+      "pilot_cpu_seconds": 0.15625,
+      "comparisons": null,
+      "estimated_10m_seconds": 21.875
+    },
+    {
+      "algorithm": "counted_hybrid_s16",
+      "pilot_n": 100000,
+      "pilot_cpu_seconds": 0.171875,
+      "comparisons": 1638867,
+      "estimated_10m_seconds": 24.062499999999996
+    }
+  ],
+  "available_memory_bytes": 1486630912,
+  "estimated_large_array_bytes": 520000000,
+  "memory_note": "Approximate integer objects plus base/work/buffer pointer arrays; additional interpreter/histograms/slack needed",
+  "rss_bytes_after_pilot": 25681920
+}
