@@ -1,5 +1,30 @@
 # Presentation checks completed
 
+## Code-slide refresh: 2026-09-14
+
+Edited slides 2-7 in the existing Google document after the team expanded it to
+18 slides. Replaced 14 code panels with images of the beginner-friendly source,
+updated the six speaker-note sections, and adjusted the slide 7 panel heights.
+The code source SHA-256 is recorded in `code-images/manifest.json`.
+
+- All 14 images embedded in the downloaded PowerPoint match the replacement PNG
+  hashes exactly, on their intended slides.
+- Displayed excerpts preserve the source syntax tree after omitting docstrings;
+  parentheses and line wrapping only affect display.
+- Speaker notes are in the notes parts, with no note paragraphs pasted on slides.
+- Rendered PDF pages 2-7 at 1600 pixels wide using Poppler and visually inspected
+  every page. No clipped code, image overlap or missing lines were observed.
+- Saved the 18-page Google PDF as `SC2001-Project1.pdf` and matching converted
+  PowerPoint as `SC2001-Project1-current.pptx`. The original native-chart PPTX is retained.
+- Full experimental measurements and algorithm source were not changed or rerun.
+  Notes distinguish the current code from the historical benchmark implementation.
+
+Other members were editing the cloud deck during this refresh. The checks above
+cover the requested code slides, not a review of all later team-authored content.
+The full expanded deck still needs a timed group rehearsal and classroom check.
+
+## Original 11-slide delivery: 2026-09-13
+
 Checked the final presentation on 2026-09-13. This record concerns the delivered
 files, not a claim that the group has rehearsed or presented them.
 

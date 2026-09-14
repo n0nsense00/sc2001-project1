@@ -2,46 +2,52 @@
 
 [Open SC2001 Project 1 - Hybrid Merge Sort in Google Slides](https://docs.google.com/presentation/d/1xcD_j9SiE7MKP3iQ7dYprbrnjnh-WGXluFaTKWdEfbY/edit).
 
-The native Google Slides document was created in the signed-in account, renamed,
-and verified as saved to Drive. General access was checked as **Restricted**,
-with only the owner listed. No invitations, publication, or sharing changes were made.
+The team-edited deck contained 18 slides when exported on 2026-09-14. Slides 2-7
+were refreshed in place with 14 code images from the current beginner-friendly
+`algorithms.py`, plus explanations in speaker notes. The Google deck is the place
+for ongoing group edits. No sharing settings or invitations were changed by this
+refresh; sharing is managed by the owner separately from the private GitHub repo.
 
-## Files and editability
+## Current files
 
-- `SC2001-Project1.pdf`: the 11-page PDF exported from that Google Slides document.
-- `SC2001-Project1-final.pptx`: the original editable PowerPoint, with six native
-  charts, embedded chart workbooks, two native tables and 11 speaker-note parts.
-- `presentation.md`: complete slide content, source references and timed notes.
-- `content.json`: chart data and slide content derived from the saved full results.
-- `qa.md`: completed export and visual-inspection record.
+- `SC2001-Project1.pdf`: 18-page snapshot exported from Google Slides after the refresh.
+- `SC2001-Project1-current.pptx`: the matching Google export, including editable
+  slide text and speaker notes. Code panels and charts are images.
+- `code-images/`: 14 replacement PNGs. `manifest.json` records the source hash,
+  functions, slide mapping, image hashes and positions checked against the export.
+- `code-slide-notes.md`: the six updated notes, with suggested timings and a small demo.
+- `qa.md`: original inspection record and the dated code-slide refresh check.
 
-Google Slides retains editable slide text, two tables and speaker notes. Its
-PowerPoint conversion turned the six native charts into images. Those charts
-cannot be edited as data series in the Google deck. The original local PowerPoint
-retains chart-data editing; do not replace it with a downloaded Google copy if
-you need that capability. This is the remaining format limitation.
+Code panels omit comments/docstrings and wrap a few long lines with equivalent
+parentheses. Their parsed Python syntax trees were checked against the source
+excerpts. The executable sorting logic is unchanged by the display formatting.
+To replace a panel again, select the image in Slides and choose **Replace image >
+Upload from computer**, selecting its matching file from `code-images/`.
 
-For graph updates, run `python analyze.py --results results/full --out plots/full`
-from the project folder. The PNG/SVG exports are in `plots/full`. Replace the
-relevant image in Google Slides, or edit the native PowerPoint chart's data.
-`python build_slide_content.py` regenerates local content and notes; it does not
-automatically change the cloud deck. No benchmark runs from those commands.
+The full benchmark results remain measurements of commit `25fc591`. The readable
+code comes from `422d067` and has its own correctness checks and smoke results;
+the full benchmark was not rerun for this refresh. The updated notes disclose this.
 
-After editing Google Slides, use File > Download > PDF Document to refresh the
-portable copy. Use File > Download > Microsoft PowerPoint when a converted copy
-is useful, remembering its charts are images. To import the original elsewhere,
-open Google Slides, choose the file picker and Upload, and select the final PPTX.
-Conversion may again rasterize native charts.
+## Original presentation assets
 
-## Delivery and rehearsal
+`SC2001-Project1-final.pptx` remains the original 11-slide PowerPoint, with six native
+charts, embedded chart workbooks, two native tables and 11 note parts. It is useful
+for chart-data editing. `presentation.md` and `content.json` describe that original
+version, not the later team layout. Keep the original if native chart editing matters.
 
-Present slides 1-8 in 480 seconds, including the small live demo; reserve 120
-seconds for Q&A. Slides 9-11 are appendices for questions. Speaker notes are in
-the deck and in `presentation.md` with exact time windows. Use Presenter view to
-see the notes and timer. Preopen a terminal in `project1` for `python demo.py`.
-Keep the PDF available as the offline presentation fallback.
+Run `python analyze.py --results results/full --out plots/full` from the project folder
+to recreate PNG/SVG plots. `python build_slide_content.py` regenerates the original
+local content and notes; it does not edit the cloud deck or run benchmarks.
 
-Every group member should read `../docs/walkthrough-and-qa.md`, run the demo and
-explain the final regression. The role allocation is a suggestion, not a record
-of contributions. A timed human rehearsal and checking the actual classroom
-projector remain group activities. No PowerPoint desktop inspection is claimed.
+## Export and rehearsal
+
+After later cloud edits, use **File > Download > PDF Document** to refresh the PDF,
+or **File > Download > Microsoft PowerPoint** for a converted editable snapshot.
+The saved files here are snapshots and do not synchronize automatically.
+
+Reserve 480 seconds for explanation/demo and 120 seconds for Q&A. The updated
+code-slide notes suggest 160 seconds in total, including the optional small demo.
+The team-expanded deck needs a timed rehearsal; the original 8-main-slide timing
+does not automatically apply to 18 slides. Preopen a terminal for `python demo.py`.
+Every member should read `../docs/walkthrough-and-qa.md` and explain all algorithms,
+the counting rule, fair timing, threshold choice, and the measured hybrid regression.

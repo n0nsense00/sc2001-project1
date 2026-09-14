@@ -1,5 +1,9 @@
 # SC2001 presentation and speaker notes
 
+This outline describes the original generated 11-slide presentation. The team
+later expanded the Google deck to 18 slides. See `google-slides.md` for current
+exports and `code-slide-notes.md` for the refreshed notes on slides 2-7.
+
 8 main slides: 480 seconds. Q&A: 120 seconds. Appendices are optional during questions.
 
 ## Slide 1: Integration of Merge Sort & Insertion Sort
