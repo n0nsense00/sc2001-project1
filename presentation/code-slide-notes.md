@@ -1,14 +1,14 @@
 # Updated code slides 2-7
 
-These notes match the Google Slides refresh on 2026-09-14. The suggested times total 160 seconds, including the optional small demo. Rehearse the full team-edited deck separately to stay within 8 minutes plus 2 minutes of Q&A.
+These notes match the Google Slides refresh on 2026-09-14, including the shorter merge indices left, right and output. The suggested times total 160 seconds, including the optional small demo. Rehearse the full team-edited deck separately to stay within 8 minutes plus 2 minutes of Q&A.
 
 ## Slide 2
 
-Suggested time: 25 seconds. Read merge_sort first: prepare one reusable buffer, set lo=0 and hi=len(values), then call _original. The range [lo, hi) includes lo but excludes hi. _original stops at size 0 or 1, recursively sorts both halves, and merges them. In _merge, left_index and right_index track the next unused values; write_index tracks the buffer slot. Taking the left item when values are equal keeps the sort stable. Copying leftovers needs no ordering comparisons. Code source: current algorithms.py, commit 422d067. Comments and docstrings are omitted from the panels for space. Historical full benchmark results elsewhere in this deck were measured before the readability rewrite (commit 25fc591); they have not been rerun on this spelling.
+Suggested time: 25 seconds. Read merge_sort first: prepare one reusable buffer, set lo=0 and hi=len(values), then call _original. The range [lo, hi) includes lo but excludes hi. _original stops at size 0 or 1, recursively sorts both halves, and merges them. In _merge, left and right are the indices of the next unused items in each half. output is the index of the next buffer slot to fill. Taking the left item when values are equal keeps the sort stable. Copying leftovers needs no ordering comparisons. Code source: current algorithms.py, using left, right and output. Historical full benchmark results were measured before the readability rewrite (commit 25fc591).
 
 ## Slide 3
 
-Suggested time: 20 seconds. The counted version makes the same sorting decisions as the uncounted version. A key comparison compares data values for ordering. In _merge_counted, increment comparisons immediately before evaluating values[left_index] <= values[right_index]. Count either outcome, true or false. Do not count index checks, copying, or the stopping condition. _original_counted returns left_comparisons + right_comparisons + merge_comparisons. The base case returns zero because a size-zero or size-one section needs no ordering check. Timing uses the separate uncounted version, so adding the counter does not distort the reported sorting CPU time. Panels use current algorithms.py (422d067); a few long lines are wrapped with equivalent parentheses for readability.
+Suggested time: 20 seconds. The counted version makes the same sorting decisions as the uncounted version. A key comparison compares data values for ordering. In _merge_counted, increment comparisons immediately before evaluating values[left] <= values[right]. Count either outcome, true or false. left and right index the two halves, and output indexes the buffer. Do not count index checks, copying, or the stopping condition. _original_counted adds left_comparisons, right_comparisons and merge_comparisons. The base case returns zero. Timing uses the separate uncounted version so the counter does not distort sorting CPU time. Code source: current algorithms.py with the shorter index names.
 
 ## Slide 4
 

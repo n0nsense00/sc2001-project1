@@ -28,6 +28,10 @@ The full benchmark results remain measurements of commit `25fc591`. The readable
 code comes from `422d067` and has its own correctness checks and smoke results;
 the full benchmark was not rerun for this refresh. The updated notes disclose this.
 
+The later naming update changes the merge indices to `left`, `right`, and `output`.
+Slides 2 and 3 now show these names and explain that they hold indices. Slides 4-7
+need no changes for this rename. The PDF and current PowerPoint include this update.
+
 ## Original presentation assets
 
 `SC2001-Project1-final.pptx` remains the original 11-slide PowerPoint, with six native

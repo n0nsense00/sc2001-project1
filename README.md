@@ -23,7 +23,8 @@ to distinguish PDF requirements from requested deliverables and design choices.
 
 `algorithms.py` now uses a more beginner-friendly spelling of the same sorting
 steps: ordinary multi-line conditions, one assignment per line, descriptive
-merge indices, and comments explaining the loop decisions. Function names and
+merge indices (`left`, `right`, and `output`), and comments explaining the loop
+decisions. Function names and
 arguments remain compatible with the notebook and experiment runner.
 
 The saved `results/full` and `results/smoke` measurements were produced by the
@@ -35,11 +36,16 @@ The historical files and source hashes are preserved; the full benchmark has
 not been rerun for this readability update. Use a new results folder to measure
 the current version.
 
-The revised code's [smoke audit](results/readability-smoke/audit.json) covers 108
+The readability revision's [smoke audit](results/readability-smoke/audit.json) covers 108
 completed measurements and a successful resume without duplicate rows. Its
 [equivalence report](results/readability-smoke/equivalence.json) records the
 checks against the historical version. This small run verifies operation; it
 does not replace the assignment's original full-size measurements.
+
+The later index rename uses `left`, `right`, and `output` in both merge helpers.
+All 12 tests pass after this rename. The merge helpers' Python instruction bytes
+and constants match the pre-rename functions. The smoke files retain the source hash
+from before this naming change; no benchmark measurements were replaced.
 
 All 234 full measurement rows and 108 separate smoke rows completed. Twelve test
 methods passed; full and smoke result audits passed. The selected S=12 tied with

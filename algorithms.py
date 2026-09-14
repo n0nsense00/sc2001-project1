@@ -107,66 +107,66 @@ def insertion_sort_counted(values, lo=0, hi=None):
 
 # Merge assumes that the left and right halves are ALREADY sorted.
 def _merge(values, buffer, lo, mid, hi):
-    left_index = lo
-    right_index = mid
-    write_index = lo
+    left = lo
+    right = mid
+    output = lo
 
     # Compare the next unused item from each half.
-    while left_index < mid and right_index < hi:
-        if values[left_index] <= values[right_index]:
+    while left < mid and right < hi:
+        if values[left] <= values[right]:
             # Take the left item on a tie to preserve equal-item order.
-            buffer[write_index] = values[left_index]
-            left_index = left_index + 1
+            buffer[output] = values[left]
+            left = left + 1
         else:
-            buffer[write_index] = values[right_index]
-            right_index = right_index + 1
-        write_index = write_index + 1
+            buffer[output] = values[right]
+            right = right + 1
+        output = output + 1
 
     # One half is exhausted. Copy any leftovers without data comparisons.
-    while left_index < mid:
-        buffer[write_index] = values[left_index]
-        left_index = left_index + 1
-        write_index = write_index + 1
+    while left < mid:
+        buffer[output] = values[left]
+        left = left + 1
+        output = output + 1
 
-    while right_index < hi:
-        buffer[write_index] = values[right_index]
-        right_index = right_index + 1
-        write_index = write_index + 1
+    while right < hi:
+        buffer[output] = values[right]
+        right = right + 1
+        output = output + 1
 
     # Put the completed merged section back into the original list.
-    for write_index in range(lo, hi):
-        values[write_index] = buffer[write_index]
+    for output in range(lo, hi):
+        values[output] = buffer[output]
 
 
 def _merge_counted(values, buffer, lo, mid, hi):
     comparisons = 0
-    left_index = lo
-    right_index = mid
-    write_index = lo
+    left = lo
+    right = mid
+    output = lo
 
-    while left_index < mid and right_index < hi:
+    while left < mid and right < hi:
         # Index checks and copying do not count as key comparisons.
         comparisons = comparisons + 1
-        if values[left_index] <= values[right_index]:
-            buffer[write_index] = values[left_index]
-            left_index = left_index + 1
+        if values[left] <= values[right]:
+            buffer[output] = values[left]
+            left = left + 1
         else:
-            buffer[write_index] = values[right_index]
-            right_index = right_index + 1
-        write_index = write_index + 1
+            buffer[output] = values[right]
+            right = right + 1
+        output = output + 1
 
-    while left_index < mid:
-        buffer[write_index] = values[left_index]
-        left_index = left_index + 1
-        write_index = write_index + 1
+    while left < mid:
+        buffer[output] = values[left]
+        left = left + 1
+        output = output + 1
 
-    while right_index < hi:
-        buffer[write_index] = values[right_index]
-        right_index = right_index + 1
-        write_index = write_index + 1
+    while right < hi:
+        buffer[output] = values[right]
+        right = right + 1
+        output = output + 1
 
-    for write_index in range(lo, hi):
-        values[write_index] = buffer[write_index]
+    for output in range(lo, hi):
+        values[output] = buffer[output]
 
     return comparisons
 

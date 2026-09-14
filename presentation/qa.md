@@ -1,5 +1,18 @@
 # Presentation checks completed
 
+## Shorter merge indices: 2026-09-14
+
+Renamed the three local indices to `left`, `right`, and `output` in `_merge` and
+`_merge_counted`. All 12 automated tests pass. Both functions retain the same
+Python instruction bytes and constants as before the rename.
+
+Replaced the two merge panels on slides 2 and 3 and updated their speaker notes.
+The exported image hashes match the new PNG assets, and both rendered PDF pages
+were visually inspected with no clipped code or overlapping panels. Slides 4-7
+are unchanged. Other slide content and notes match the pre-edit export, ignoring
+regenerated table-style IDs whose definitions are identical. Current PDF/PPTX
+snapshots include the shorter names. Historical benchmark files remain unchanged.
+
 ## Code-slide refresh: 2026-09-14
 
 Edited slides 2-7 in the existing Google document after the team expanded it to

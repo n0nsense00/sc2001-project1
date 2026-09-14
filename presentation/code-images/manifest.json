@@ -1,6 +1,6 @@
 {
   "source": "algorithms.py",
-  "source_sha256": "b9334607ca2b06eb16322c4d97cbf0be9490418341964e40ba612482eb90503c",
+  "source_sha256": "774f3e757dbeada393c308c8e5525d3f74523848bfc6b819c7558c5ebfe7ed4f",
   "note": "Generated from current algorithms.py. Comments, docstrings and blank lines omitted; long lines wrapped using equivalent parentheses. Python AST equality checked before rendering.",
   "images": [
     {
@@ -27,15 +27,15 @@
       "slide": 2,
       "function": "_merge",
       "file": "slide-02-merge.png",
-      "font_points": 12.63,
+      "font_points": 14,
       "lines": 22,
       "frame_emu": {
         "x": "6546475",
         "y": "783700",
-        "cx": "4928275",
+        "cx": "4928277",
         "cy": "5769500"
       },
-      "image_sha256": "cc40b477c850515d90ffa9bf695884492b4f6b0f6736bb9fb3ac443fde41bf05",
+      "image_sha256": "fbece3b1e97e7c3b6dd397fdf298a67e64a4bf689f2698e283ef54cad0c38695",
       "actual_frame_emu": {
         "x": "6546475",
         "y": "783700",
@@ -87,15 +87,15 @@
       "slide": 3,
       "function": "_merge_counted",
       "file": "slide-03-merge_counted.png",
-      "font_points": 12.63,
+      "font_points": 13.22,
       "lines": 25,
       "frame_emu": {
         "x": "6672988",
-        "y": "1390087",
-        "cx": "4928275",
-        "cy": "5097000"
+        "y": "1390088",
+        "cx": "4928277",
+        "cy": "5097001"
       },
-      "image_sha256": "b854b61ce1bfb93e89b2b51129628f7b09380f3dd567c68d8ca6976c2df98e9b",
+      "image_sha256": "94f98ef61437cda7d80b81bf90c036544c5b7b2171fd379881d15c0ae0bbfd71",
       "actual_frame_emu": {
         "x": "6672988",
         "y": "1390088",
