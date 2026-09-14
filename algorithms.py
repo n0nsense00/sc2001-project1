@@ -1,41 +1,68 @@
-"""Stable, in-place-interface sorting with half-open ranges [lo, hi).
+"""Merge sort, insertion sort, and hybrid sort written for learning.
 
-The algorithms rearrange the supplied list and return None (uncounted) or an
-integer count (counted). One caller-owned merge buffer is reused throughout.
-No slicing, skip-merge optimization, sentinel values, or built-in sorting.
+All functions sort the supplied list directly.
+Use merge_sort() or hybrid_sort() for sorting without a counter.
+Use a function ending in _counted() to sort and return the comparison count.
+
+Index names used throughout:
+    lo: the first index to include
+    hi: the first index to exclude
+    mid: the start of the right half
+For example, lo=0 and hi=3 means indices 0, 1, 2. The size is hi - lo.
+
+Names beginning with _ are helpers used by the public sorting functions.
+Read _insert, _merge, _original, and _hybrid to learn the main algorithms.
 """
 
 
+# Input checks and temporary storage.
 def _check_threshold(threshold):
-    if isinstance(threshold, bool) or not isinstance(threshold, int):
+    # Python treats True and False as integers, but neither is a valid S here.
+    if isinstance(threshold, bool):
+        raise TypeError("threshold must be an integer, not bool")
+    if not isinstance(threshold, int):
         raise TypeError("threshold must be an integer, not bool")
     if threshold < 1:
         raise ValueError("threshold must be at least 1")
 
 
 def _check_range(values, lo, hi):
-    if not 0 <= lo <= hi <= len(values):
+    if lo < 0:
+        raise ValueError("expected 0 <= lo <= hi <= len(values)")
+    if lo > hi:
+        raise ValueError("expected 0 <= lo <= hi <= len(values)")
+    if hi > len(values):
         raise ValueError("expected 0 <= lo <= hi <= len(values)")
 
 
 def _get_buffer(values, buffer):
     if buffer is None:
-        return [None] * len(values)
-    if buffer is values or len(buffer) != len(values):
-        raise ValueError("buffer must be distinct and have the same length")
+        # Make one empty slot for each item. Every merge reuses this buffer.
+        buffer = [None] * len(values)
+    else:
+        if buffer is values:
+            raise ValueError("buffer must be distinct and have the same length")
+        if len(buffer) != len(values):
+            raise ValueError("buffer must be distinct and have the same length")
     return buffer
 
 
+# Insertion sort: put each next item into the sorted section before it.
 def _insert(values, lo, hi):
+    # The first item is already a sorted section of size one.
     for position in range(lo + 1, hi):
         key = values[position]
         previous = position - 1
+
+        # Move larger items one place right to make room for key.
         while previous >= lo:
             if values[previous] > key:
                 values[previous + 1] = values[previous]
-                previous -= 1
+                previous = previous - 1
             else:
+                # Stop at a value <= key. Equal items keep their order.
                 break
+
         values[previous + 1] = key
 
 
@@ -44,134 +71,195 @@ def _insert_counted(values, lo, hi):
     for position in range(lo + 1, hi):
         key = values[position]
         previous = position - 1
+
         while previous >= lo:
-            comparisons += 1  # Includes an evaluated false comparison.
+            # Count the next data comparison, whether true or false.
+            comparisons = comparisons + 1
             if values[previous] > key:
                 values[previous + 1] = values[previous]
-                previous -= 1
+                previous = previous - 1
             else:
                 break
+
         values[previous + 1] = key
+
     return comparisons
 
 
 def insertion_sort(values, lo=0, hi=None):
-    """Sort just [lo, hi); equal items do not move past one another."""
-    hi = len(values) if hi is None else hi
+    """Sort the specified section, or the whole list if no indices are given."""
+    if hi is None:
+        hi = len(values)
+
     _check_range(values, lo, hi)
     _insert(values, lo, hi)
 
 
 def insertion_sort_counted(values, lo=0, hi=None):
-    """Sort [lo, hi) and count only evaluated values[previous] > key."""
-    hi = len(values) if hi is None else hi
+    """Insertion-sort the section and return its number of key comparisons."""
+    if hi is None:
+        hi = len(values)
+
     _check_range(values, lo, hi)
-    return _insert_counted(values, lo, hi)
+    comparisons = _insert_counted(values, lo, hi)
+    return comparisons
 
 
+# Merge assumes that the left and right halves are ALREADY sorted.
 def _merge(values, buffer, lo, mid, hi):
-    left, right, output = lo, mid, lo
-    while left < mid and right < hi:
-        if values[left] <= values[right]:
-            buffer[output] = values[left]
-            left += 1
+    left_index = lo
+    right_index = mid
+    write_index = lo
+
+    # Compare the next unused item from each half.
+    while left_index < mid and right_index < hi:
+        if values[left_index] <= values[right_index]:
+            # Take the left item on a tie to preserve equal-item order.
+            buffer[write_index] = values[left_index]
+            left_index = left_index + 1
         else:
-            buffer[output] = values[right]
-            right += 1
-        output += 1
-    while left < mid:
-        buffer[output] = values[left]
-        left += 1
-        output += 1
-    while right < hi:
-        buffer[output] = values[right]
-        right += 1
-        output += 1
-    for output in range(lo, hi):
-        values[output] = buffer[output]
+            buffer[write_index] = values[right_index]
+            right_index = right_index + 1
+        write_index = write_index + 1
+
+    # One half is exhausted. Copy any leftovers without data comparisons.
+    while left_index < mid:
+        buffer[write_index] = values[left_index]
+        left_index = left_index + 1
+        write_index = write_index + 1
+
+    while right_index < hi:
+        buffer[write_index] = values[right_index]
+        right_index = right_index + 1
+        write_index = write_index + 1
+
+    # Put the completed merged section back into the original list.
+    for write_index in range(lo, hi):
+        values[write_index] = buffer[write_index]
 
 
 def _merge_counted(values, buffer, lo, mid, hi):
     comparisons = 0
-    left, right, output = lo, mid, lo
-    while left < mid and right < hi:
-        comparisons += 1  # One ordering decision; bounds/copying are excluded.
-        if values[left] <= values[right]:
-            buffer[output] = values[left]
-            left += 1
+    left_index = lo
+    right_index = mid
+    write_index = lo
+
+    while left_index < mid and right_index < hi:
+        # Index checks and copying do not count as key comparisons.
+        comparisons = comparisons + 1
+        if values[left_index] <= values[right_index]:
+            buffer[write_index] = values[left_index]
+            left_index = left_index + 1
         else:
-            buffer[output] = values[right]
-            right += 1
-        output += 1
-    while left < mid:
-        buffer[output] = values[left]
-        left += 1
-        output += 1
-    while right < hi:
-        buffer[output] = values[right]
-        right += 1
-        output += 1
-    for output in range(lo, hi):
-        values[output] = buffer[output]
+            buffer[write_index] = values[right_index]
+            right_index = right_index + 1
+        write_index = write_index + 1
+
+    while left_index < mid:
+        buffer[write_index] = values[left_index]
+        left_index = left_index + 1
+        write_index = write_index + 1
+
+    while right_index < hi:
+        buffer[write_index] = values[right_index]
+        right_index = right_index + 1
+        write_index = write_index + 1
+
+    for write_index in range(lo, hi):
+        values[write_index] = buffer[write_index]
+
     return comparisons
 
 
+# Original merge sort: split down to sections of size zero or one.
 def _original(values, buffer, lo, hi):
-    if hi - lo <= 1:
+    size = hi - lo
+    if size <= 1:
         return
-    mid = lo + (hi - lo) // 2
+
+    mid = lo + size // 2
+
+    # Each recursive call finishes sorting its half before we merge.
     _original(values, buffer, lo, mid)
     _original(values, buffer, mid, hi)
     _merge(values, buffer, lo, mid, hi)
 
 
 def _original_counted(values, buffer, lo, hi):
-    if hi - lo <= 1:
+    size = hi - lo
+    if size <= 1:
         return 0
-    mid = lo + (hi - lo) // 2
-    comparisons = _original_counted(values, buffer, lo, mid)
-    comparisons += _original_counted(values, buffer, mid, hi)
-    comparisons += _merge_counted(values, buffer, lo, mid, hi)
+
+    mid = lo + size // 2
+    left_comparisons = _original_counted(values, buffer, lo, mid)
+    right_comparisons = _original_counted(values, buffer, mid, hi)
+    merge_comparisons = _merge_counted(values, buffer, lo, mid, hi)
+
+    comparisons = left_comparisons + right_comparisons + merge_comparisons
     return comparisons
 
 
+# Hybrid sort: stop splitting once the CURRENT section has at most S items.
 def _hybrid(values, buffer, lo, hi, threshold):
-    if hi - lo <= threshold:
+    size = hi - lo
+    if size <= threshold:
         _insert(values, lo, hi)
         return
-    mid = lo + (hi - lo) // 2
+
+    mid = lo + size // 2
     _hybrid(values, buffer, lo, mid, threshold)
     _hybrid(values, buffer, mid, hi, threshold)
     _merge(values, buffer, lo, mid, hi)
 
 
 def _hybrid_counted(values, buffer, lo, hi, threshold):
-    if hi - lo <= threshold:
-        return _insert_counted(values, lo, hi)
-    mid = lo + (hi - lo) // 2
-    comparisons = _hybrid_counted(values, buffer, lo, mid, threshold)
-    comparisons += _hybrid_counted(values, buffer, mid, hi, threshold)
-    comparisons += _merge_counted(values, buffer, lo, mid, hi)
+    size = hi - lo
+    if size <= threshold:
+        comparisons = _insert_counted(values, lo, hi)
+        return comparisons
+
+    mid = lo + size // 2
+    left_comparisons = _hybrid_counted(values, buffer, lo, mid, threshold)
+    right_comparisons = _hybrid_counted(values, buffer, mid, hi, threshold)
+    merge_comparisons = _merge_counted(values, buffer, lo, mid, hi)
+
+    comparisons = left_comparisons + right_comparisons + merge_comparisons
     return comparisons
 
 
+# Public functions: these prepare the inputs and start the recursive helpers.
+# No timing happens in this file. experiment.py supplies a buffer before timing.
 def merge_sort(values, buffer=None):
-    """Original top-down merge sort; optional buffer allocation is not timed."""
-    _original(values, _get_buffer(values, buffer), 0, len(values))
+    """Sort values using original merge sort; the supplied list is changed."""
+    buffer = _get_buffer(values, buffer)
+    lo = 0
+    hi = len(values)
+    _original(values, buffer, lo, hi)
 
 
 def merge_sort_counted(values, buffer=None):
-    """Original merge sort returning its number of key comparisons."""
-    return _original_counted(values, _get_buffer(values, buffer), 0, len(values))
+    """Sort values using original merge sort and return the comparison count."""
+    buffer = _get_buffer(values, buffer)
+    lo = 0
+    hi = len(values)
+    comparisons = _original_counted(values, buffer, lo, hi)
+    return comparisons
 
 
 def hybrid_sort(values, threshold, buffer=None):
-    """Use insertion sort once the CURRENT subarray size is <= threshold."""
+    """Sort values using the hybrid; threshold is the insertion cutoff S."""
     _check_threshold(threshold)
-    _hybrid(values, _get_buffer(values, buffer), 0, len(values), threshold)
+    buffer = _get_buffer(values, buffer)
+    lo = 0
+    hi = len(values)
+    _hybrid(values, buffer, lo, hi, threshold)
 
 
 def hybrid_sort_counted(values, threshold, buffer=None):
-    """Count merge <= and insertion > comparisons, including evaluated false."""
+    """Hybrid-sort values and return the number of evaluated key comparisons."""
     _check_threshold(threshold)
-    return _hybrid_counted(values, _get_buffer(values, buffer), 0, len(values), threshold)
+    buffer = _get_buffer(values, buffer)
+    lo = 0
+    hi = len(values)
+    comparisons = _hybrid_counted(values, buffer, lo, hi, threshold)
+    return comparisons

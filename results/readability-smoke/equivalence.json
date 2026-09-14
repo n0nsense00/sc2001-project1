@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "previous_revision": "25fc5914b09b8b0c4d9967e254ea38c0f98c422b",
+  "input_cases": 226,
+  "output_and_return_value_checks": 4432,
+  "checks": "Current and historical public sorts produce identical sorted outputs and return values, including exact comparison counts; keyword subarray calls preserved."
+}

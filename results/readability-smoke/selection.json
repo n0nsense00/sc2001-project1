@@ -1,0 +1,10 @@
+{
+  "selected_s": 8,
+  "confirmation_median_cpu_seconds": {
+    "16": 0.0390625,
+    "4": 0.046875,
+    "8": 0.0390625
+  },
+  "criterion": "lowest median uncounted CPU time on confirmation_n; ties choose smaller S",
+  "scope": "best among shortlisted tested values at confirmation_n"
+}

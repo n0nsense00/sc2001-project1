@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "measurement_rows": 108,
+  "paired_datasets": 21,
+  "selected_s": 8,
+  "all_expected_cases_present": true,
+  "all_outputs_validated": true,
+  "fresh_final_seeds": true,
+  "checks": "IDs, configuration, completion, pairing hashes, mode separation, length/order/integrity flags"
+}

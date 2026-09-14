@@ -1,0 +1,42 @@
+{
+  "name": "smoke",
+  "x": 100,
+  "repeats": 3,
+  "modes": [
+    "timed",
+    "counted"
+  ],
+  "warmup_n": 256,
+  "timed_batch_items": 20000,
+  "fixed_s": 8,
+  "sizes": [
+    1000,
+    3000,
+    10000
+  ],
+  "fixed_n": 3000,
+  "tuning_sizes": [
+    1000,
+    3000
+  ],
+  "thresholds": [
+    1,
+    4,
+    8,
+    16,
+    32
+  ],
+  "shortlist_count": 3,
+  "confirmation_n": 10000,
+  "final_n": 10000,
+  "seed_bases": {
+    "scale": 1200,
+    "tune": 2300,
+    "confirm": 3400,
+    "final": 9500
+  },
+  "primary_criterion": "lowest median uncounted CPU time on confirmation_n; ties choose smaller S",
+  "shortlist_rule": "three lowest geometric means of median CPU ratios to S=1 across tuning sizes",
+  "order_seed": 73129,
+  "exact_histogram_max_x": 1000000
+}

@@ -21,6 +21,26 @@ to distinguish PDF requirements from requested deliverables and design choices.
 - [Collaboration guide](docs/collaboration.md).
 - [Completed requirements checklist](docs/run-and-delivery-checklist.md).
 
+`algorithms.py` now uses a more beginner-friendly spelling of the same sorting
+steps: ordinary multi-line conditions, one assignment per line, descriptive
+merge indices, and comments explaining the loop decisions. Function names and
+arguments remain compatible with the notebook and experiment runner.
+
+The saved `results/full` and `results/smoke` measurements were produced by the
+[original implementation at commit 25fc591](https://github.com/n0nsense00/sc2001-project1/blob/25fc5914b09b8b0c4d9967e254ea38c0f98c422b/algorithms.py).
+The readability update passed the 12 existing tests and 4,432 checks against
+that implementation on 226 small inputs, including exact comparison counts.
+Those checks do not make the old CPU measurements timings of the revised code.
+The historical files and source hashes are preserved; the full benchmark has
+not been rerun for this readability update. Use a new results folder to measure
+the current version.
+
+The revised code's [smoke audit](results/readability-smoke/audit.json) covers 108
+completed measurements and a successful resume without duplicate rows. Its
+[equivalence report](results/readability-smoke/equivalence.json) records the
+checks against the historical version. This small run verifies operation; it
+does not replace the assignment's original full-size measurements.
+
 All 234 full measurement rows and 108 separate smoke rows completed. Twelve test
 methods passed; full and smoke result audits passed. The selected S=12 tied with
 S=32 on confirmation median CPU time; the predeclared rule chooses smaller S.
@@ -103,13 +123,23 @@ other applications. The pilot pointer/object estimate is about 520 MB before
 histograms, interpreter, allocator slack and other overhead. Large runs may be
 slower than n log n extrapolation because the pilot does not model the full machine.
 
-Resume the supplied full configuration (completed cases are skipped):
+The supplied full results are complete and belong to the historical code above.
+The revised code deliberately refuses to append to them because its source hash
+has changed. To inspect or resume that historical version, use a separate Git
+checkout. Run these commands from the project root with your Python environment
+activated (see Setup):
 
 ```bash
+git worktree add --detach ../sc2001-project1-measured 25fc5914b09b8b0c4d9967e254ea38c0f98c422b
+cd ../sc2001-project1-measured
 python experiment.py --config configs/full.json --out results/full --resume
 ```
 
-Resume your own interrupted run:
+Resume still requires matching Python/platform settings. A different machine or
+environment should use a new output folder. Return to your current project
+folder before working on the revised code.
+
+Resume your own interrupted run from the same unchanged code and configuration:
 
 ```bash
 python experiment.py --config configs/full.json --out results/my-full --resume
